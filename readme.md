@@ -51,7 +51,7 @@ Booksspine aims to build a trusted digital bookstore where users can:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/booksspine.git
+git clone https://github.com/BooksSpine/Books-Spine-Mobile.git
 
 # Navigate into the project
 cd booksspine

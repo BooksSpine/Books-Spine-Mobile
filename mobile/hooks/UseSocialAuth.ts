@@ -1,10 +1,12 @@
 import { useSSO } from "@clerk/clerk-expo";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Alert } from "react-native";
 
 const useSocialAuth = () => {
-    const [LodingStrategy, setLodingStrategy] = useState<string | null>(null)
+  const [LodingStrategy, setLodingStrategy ] = useState<string | null>(null);
   const { startSSOFlow } = useSSO();
+  const router = useRouter();
 
   const handleSocialAuth = async (
     strategy: "oauth_google" | "oauth_facebook" | "oauth_apple"
@@ -13,7 +15,8 @@ const useSocialAuth = () => {
     try {
       const { createdSessionId, setActive } = await startSSOFlow({ strategy });
       if (createdSessionId && setActive) {
-        setActive({ session: createdSessionId });
+        await setActive({ session: createdSessionId });
+        router.replace("/(tabs)/" as any);
       }
     } catch (error) {
       console.log("error in social auth", error);

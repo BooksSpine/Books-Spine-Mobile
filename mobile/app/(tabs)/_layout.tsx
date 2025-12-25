@@ -58,11 +58,11 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="categories"
+        name="collections"
         options={{
-          title: "Categories",
+          title: "Collections",
           tabBarIcon: ({ size, color }) => (
-            <Ionicons name="grid" size={size} color={color} />
+            <Ionicons name="layers-outline" size={size} color={color} />
           ),
         }}
       />

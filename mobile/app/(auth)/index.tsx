@@ -1,12 +1,7 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  ActivityIndicator,
-} from "react-native";
+import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import React from "react";
 import useSocialAuth from "../../hooks/UseSocialAuth";
+import { Image } from "expo-image";
 
 const AuthScreen = () => {
   const { LodingStrategy, handleSocialAuth } = useSocialAuth();
@@ -16,7 +11,7 @@ const AuthScreen = () => {
       <Image
         source={require("../../assets/images/auth-image.png")}
         className="size-96"
-        resizeMode="contain"
+        contentFit="contain"
       />
       <View className="gap-2 mt-4">
         {/* google Sign in Button */}
@@ -39,7 +34,7 @@ const AuthScreen = () => {
               <Image
                 source={require("../../assets/images/google.png")}
                 className="size-10 mr-3"
-                resizeMode="contain"
+                contentFit="contain"
               />
               <Text className="text-black font-medium text-base">
                 Continue with Google
@@ -68,7 +63,7 @@ const AuthScreen = () => {
               <Image
                 source={require("../../assets/images/apple.png")}
                 className="size-8 mr-3"
-                resizeMode="contain"
+                contentFit="contain"
               />
               <Text className="text-black font-medium text-base">
                 Continue with Apple
